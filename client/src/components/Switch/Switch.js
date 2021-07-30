@@ -1,5 +1,4 @@
 import { Container, SwitchCheckbox, Sun, Moon, SwitchLabel, Input, SliderRound } from './style'
-import { useState } from 'react'
 import { useTheme } from '../../context/theme'
 
 function Switch () {
