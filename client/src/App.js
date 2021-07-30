@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import Header from './components/Header/Header'
 import Form from './components/Form/Form'
-import { GlobalStyles } from './styles/globalStyles'
-import ThemeStore, { useTheme } from './context/theme'
+import { GlobalStyles, SuccessFeedback } from './styles/globalStyles'
+import ThemeStore from './context/theme'
 import Theme from './components/Theme/Theme'
 
 function App() {
   const [showSuccess, setShowSuccess] = useState(false)
-  const { isDarkTheme } = useTheme()
 
   function handleShowSuccess () {
     setShowSuccess(true)
@@ -22,7 +21,7 @@ function App() {
             <GlobalStyles />
             <Header />
             {
-              showSuccess ? (<div>Usuário enviado com sucesso</div>) : null
+              showSuccess ? (<SuccessFeedback>Usuário enviado com sucesso</SuccessFeedback >) : null
             }
             <Form handleShowSuccess={handleShowSuccess} />
         </Theme>
