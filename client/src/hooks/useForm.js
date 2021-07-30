@@ -4,6 +4,7 @@ import axios from 'axios'
 function useForm (dataStruct, submitUrl, feedback) {
   const [values, setValues] = useState(dataStruct);
   const [errors, setErrors] = useState(dataStruct);
+  const [isLoading, setIsLoading] = useState(false)
     
   function handleBlur (e) {
     const { name, value } = e.target
@@ -78,6 +79,8 @@ function useForm (dataStruct, submitUrl, feedback) {
   function handleSubmit (e) {
     e.preventDefault()
 
+    setIsLoading(true)
+
     getEmptyFields()
 
     if (hasEmptyData() || hasErrors()) {
@@ -90,10 +93,12 @@ function useForm (dataStruct, submitUrl, feedback) {
     .then(function (response) {
       resetInputs()
       feedback('success')
+      setIsLoading(false)
     })
     .catch(function (error) {
       feedback('fail')
       console.log(error);
+      setIsLoading(false)
     });
   }
 
@@ -103,7 +108,8 @@ function useForm (dataStruct, submitUrl, feedback) {
       handleBlur,
       setValues,
       values,
-      errors
+      errors,
+      isLoading
     }
 }
 

@@ -14,10 +14,11 @@ function Form ({ handleShowSuccess, handleShowError }) {
   const {
     values,
     errors,
+    isLoading,
     handleChange,
     handleBlur,
     handleSubmit
-  } = useForm(data, 'http://localhost:5000/senwd', handleFeedback)
+  } = useForm(data, 'http://localhost:5000/send', handleFeedback)
 
   function handleFeedback (response) {
     if (response === 'fail') {
@@ -80,7 +81,7 @@ function Form ({ handleShowSuccess, handleShowError }) {
           error={errors.passwordConfirmation}
         />
 
-        <Button type="submit" />
+        <Button type="submit" value={isLoading ? 'Enviado...' : 'Enviar'} />
       </form>
     </Container>
   )
