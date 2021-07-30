@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto 20px;
 `
 
 export const SliderRound = styled.span`
