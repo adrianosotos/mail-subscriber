@@ -14,9 +14,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 `
 
-export const SuccessFeedback = styled.div`
+export const message = styled.div`
   position: fixed;
-  background-color: #3cba92;
   color: #ffffff;
   font-weight: 600;
   width: fit-content;
@@ -26,4 +25,12 @@ export const SuccessFeedback = styled.div`
   right: 25%;
   left: 25%;
   box-shadow: 1px 0px 20px -5px rgba(0,0,0,0.69);
+`
+
+export const SuccessFeedback = styled(message)`
+  background-color: #3cba92;
+`
+
+export const ErrorFeedback = styled(message)`
+  background-color: #f62854;
 `

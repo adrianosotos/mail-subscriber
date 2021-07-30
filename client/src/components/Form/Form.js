@@ -2,7 +2,7 @@ import useForm from '../../hooks/useForm'
 import Input from '../Input/Input'
 import { Container, Button } from './style'
 
-function Form ({ handleShowSuccess }) {
+function Form ({ handleShowSuccess, handleShowError }) {
   const data = {
     name: '',
     email: '',
@@ -17,14 +17,14 @@ function Form ({ handleShowSuccess }) {
     handleChange,
     handleBlur,
     handleSubmit
-  } = useForm(data, 'http://localhost:5000/send', handleFeedback)
+  } = useForm(data, 'http://localhost:5000/senwd', handleFeedback)
 
   function handleFeedback (response) {
     if (response === 'fail') {
-      return
+      return handleShowError()
     }
 
-    handleShowSuccess()
+    return handleShowSuccess()
   }
 
   return (
