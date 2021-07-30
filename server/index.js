@@ -48,7 +48,7 @@ app.post('/send', function (req, res) {
 
   transporter.sendMail({
     from: user,
-    to: 'sotos.adriano@gmail.com',
+    to: 'contato@overmind.ai',
     subject: 'Novo usuário cadastrado',
     html: output
   }).then(info => {
