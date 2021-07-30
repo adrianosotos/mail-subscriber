@@ -11,12 +11,19 @@ export const Label = styled.div`
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 6px;
-  color: ${(props) => props.theme.fontColor}
+  color: ${(props) => props.theme.fontColor};
 `
 
 export const InputElement = styled.input`
   height: 30px;
   padding: 5px;
+  background-color: ${(props) => props.theme.formBackgroundColor};
+  color: ${(props) => props.theme.fontColor};
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: ${(props) => props.theme.fontColor} !important;
+    -webkit-box-shadow: 0 0 0 30px ${(props) => props.theme.formBackgroundColor} inset;
+  }
 `
 
 export const Error = styled.div`

@@ -3,7 +3,8 @@ export const lightTheme = {
   form: '#ffffff',
   fontColor: '#000000',
   moonColor: 'grey',
-  sunColor: 'yellow'
+  sunColor: 'yellow',
+  formBackgroundColor: '#ffffff'
 }
   
 export const darkTheme = {
@@ -11,5 +12,6 @@ export const darkTheme = {
   form: '#000000',
   fontColor: '#ffffff',
   moonColor: 'yellow',
-  sunColor: 'grey'
+  sunColor: 'grey',
+  formBackgroundColor: '#292929'
 }

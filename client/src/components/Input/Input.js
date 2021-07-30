@@ -4,7 +4,7 @@ function Input ({ label, onChange, onBlur, name, type, value, error}) {
   return (
     <Container>
       <Label>{label}</Label>
-      <InputElement 
+      <InputElement
           onChange={(e) => onChange(e)}
           onBlur={e => onBlur(e)}
           name={name}
